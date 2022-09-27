@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link href="../src/css/calender.css" rel="stylesheet">
+        <link href="../src/css/theme_light.css" rel="stylesheet">
+
+        <script  src="../src/js/calender.js"></script>
+
+    </head>
+    <body>
+
+        <div class="" id="container"></div>
+
+        <script>
+
+            let parameter = {
+                onclick:calenderclick,
+                ondraw:calenderdraw
+            }
+            
+            let calender = new Calender("container",parameter);
+            calender.setupInstance(calender);
+            calender.load();
+            document.addEventListener('mouseup', function(e){
+                calender.pressend(e);
+            });
+            document.addEventListener('mousedown', function(e){
+                calender.pressstart(e);
+            });
+            document.addEventListener('mousemove', function(e){
+                calender.pressover(e);
+            });
+
+            function calenderclick(res){
+                
+            }
+
+            function calenderdraw(res){
+                
+            }
+
+        </script>
+
+
+    </body>
+</html>

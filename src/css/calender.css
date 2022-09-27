@@ -1,0 +1,90 @@
+
+
+body{
+    background:var(--bg);
+}
+.calender-title{
+    padding: 15px;
+    overflow:hidden;
+}
+.calender-title h1{
+    display:inline-block;
+    font-size:40px;color:var(--title);margin:0;
+}
+.calender-title .calender-controls{
+    display:inline-block;float:right;
+
+}
+.calender-title .calender-controls button{
+    height:40px;position:relative;
+    width: 40px;
+    background: var(--btnbg);
+    border: solid 1px var(--line);    
+}
+.calender-title .calender-controls #calenderNextBtn{
+    margin-left: -1px;
+}
+.calender-title .calender-controls button span{
+    display:inline-block;width:13px;height:13px;
+    position:absolute;top:50%;
+}
+.calender-title .calender-controls #calenderPrevBtn span{
+    border-left:solid 2px var(--btninner);
+    border-top:solid 2px var(--btninner);
+    left:14px;
+    transform:translateY(-50%) rotate(-45deg);
+}
+.calender-title .calender-controls #calenderNextBtn span{    
+    border-right:solid 2px var(--btninner);
+    border-top:solid 2px var(--btninner);
+    left:8px;
+    transform:translateY(-50%) rotate(45deg);
+}
+
+
+.calender-gubuns{
+    border-top: solid 1px #EEE;;
+    margin-top: 10px;
+    display:flex;
+}
+.calender-gubuns .calender-gubuns-item{
+    line-height: 50px;
+    text-align: center;
+    width:calc(100% / 7);
+}
+
+.calgubun{
+    width:calc(100% / 7);
+    line-height:60px;
+    text-align: center;
+    font-size: 20px;
+    color: var(--gubuntitle);
+}
+.calrow{
+    display:flex;
+
+}
+.calrow .calitem{
+    width:calc(100% / 7);
+    margin:10px;
+    border: solid 1px var(--line);    
+    min-height: 150px;    
+    position:relative;
+}
+.calrow .calitem.otherdate{
+    background:rgb(250,250,250);
+}
+.calrow .calitem .number{
+    position:absolute;top:8px;left:8px;
+    color: var(--font);
+}
+.calrow .calitem.date-0 .number{
+    color: var(--datered)
+}
+.calrow .calitem.date-6 .number{
+    color: var(--dateblue)
+}
+
+.calrow .calitem.pressed{
+    background:var(--pressed);
+}
