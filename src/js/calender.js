@@ -95,8 +95,8 @@ class Calender {
 
     pressstart = function(e){
         this.#setupPositions();        
-        let position = {left:e.clientX, top:e.clientY};
-        
+        let position = {left:e.clientX, top:(e.clientY+window.scrollY)};
+        console.log(position);
         let chkeles = document.getElementsByClassName('calitem date');       
         
         for(var i in this.calpositions){
@@ -127,7 +127,8 @@ class Calender {
             }
 
             // Check out posiitons
-            let position = {left:e.clientX, top:e.clientY};
+            let position = {left:e.clientX, top:(e.clientY+window.scrollY)};
+            
             var lastNum = -1;
             for(var i in this.calpositions){
                 let eleinfo = this.calpositions[i]['eleinfo'];                    
@@ -411,7 +412,7 @@ class Calender {
 
     getOffset(el) {
         const rect = el.getBoundingClientRect();
-        
+        console.log(rect);
         return {
           left: rect.left + window.scrollX,
           top: rect.top + window.scrollY,
