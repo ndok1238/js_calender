@@ -96,21 +96,24 @@ class Calender {
     pressstart = function(e){
         this.#setupPositions();        
         let position = {left:e.clientX, top:(e.clientY+window.scrollY)};
-        console.log(position);
+        
         let chkeles = document.getElementsByClassName('calitem date');       
         
-        for(var i in this.calpositions){
-            let ele = this.calpositions[i]['ele'];
-            let eleinfo = this.calpositions[i]['eleinfo'];
-            if(this.isInclude(eleinfo, position)){
-                
-                this.selPosition = Number(i);
+        
+        if(e.srcElement.classList.contains("calitem")){
+            for(var i in this.calpositions){
+                let ele = this.calpositions[i]['ele'];
+                let eleinfo = this.calpositions[i]['eleinfo'];
+                if(this.isInclude(eleinfo, position)){
+                    
+                    this.selPosition = Number(i);
 
-                ele.classList.add('pressed');
-                e.preventDefault();         
+                    ele.classList.add('pressed');
+                    e.preventDefault();         
 
-                this.isdown = true;
-                break;
+                    this.isdown = true;
+                    break;
+                }
             }
         }
     }
@@ -412,7 +415,7 @@ class Calender {
 
     getOffset(el) {
         const rect = el.getBoundingClientRect();
-        console.log(rect);
+        
         return {
           left: rect.left + window.scrollX,
           top: rect.top + window.scrollY,
